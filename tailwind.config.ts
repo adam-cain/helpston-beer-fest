@@ -11,6 +11,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        almond: "hsla(30, 67%, 88%, 1)",
+        black: "hsla(0, 0%, 0%, 1)",
+        sunglow: "hsla(42, 100%, 64%, 1)",
+        oxfordBlue: "hsla(219, 31%, 19%, 1)",
+      },
+      fontFamily: {
+        twkEverett: ['TWKEverett', 'sans-serif'],
       },
     },
   },
