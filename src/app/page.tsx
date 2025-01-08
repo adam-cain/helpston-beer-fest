@@ -112,7 +112,7 @@ export default function Home() {
             HELPSTON <br/>BEER FESTIVAL...
           </div>
         </div>
-        <div className=" bg-accent size-full">Next section</div>
+        <div className=" bg-accent h-24 size-full">Next section</div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>

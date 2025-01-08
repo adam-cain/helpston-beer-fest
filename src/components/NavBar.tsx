@@ -1,25 +1,32 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
+import classNames from "classnames"
 
 export default function NavBar() {
+    const [navigationOpen, setNavigationOpen] = useState(false)
+
     return (
-        <div className="relative z-50">
+        <section className="relative z-50">
             {/* Scroll animation -translate-y-28 lg:-translate-y-32
  */}
-            <div className="fixed left-0 top-0 z-50 w-full transition-all duration-500 pointer-events-auto opacity-1 
-            ">
+            <div className="fixed left-0 top-0 z-50 w-full transition-all duration-500 pointer-events-auto opacity-1">
                 <header className="w-full p-6">
                     <div className="flex items-center justify-start gap-2 lg:gap-5">
                         <Link href={"/"}>
-                            <div className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-inOutCirc text-text-stone-900 bg-highlight hover:text-hightlight hover:color-black hover:text-highlight focus:text-highlight">
-                                <span className="pointer-events-none absolute -left-1/2 -top-1/2 -z-10 block h-full w-full -translate-x-full -translate-y-full rounded-full duration-200 ease-inOutCirc bg-dark"></span>
+                            <div className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-in-out-circ text-text-stone-900 bg-highlight hover:text-hightlight  hover:bg-highlight ">
+                                <span className="pointer-events-none absolute -left-1/2 -top-1/2 -z-10 block h-full w-full -translate-x-full -translate-y-full rounded-full duration-200 ease-in-out-circ bg-dark"></span>
                                 <span className="pointer-events-none absolute inset-[0.5px] -z-20 block rounded-full bg-highlight"></span>
                                 <Image width={40} height={40} src={"/logo/logo1.svg"} alt={"Logo"} />
                                 <span className="sr-only">Home</span>
                             </div>
                         </Link>
 
-                        <button className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-inOutCirc text-highlight hover:text-stone-900 hover:bg-highlight" type="button">
+                        <button className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-in-out-circ text-highlight hover:text-stone-900 hover:bg-highlight" type="button"
+                        onClick={() => setNavigationOpen(!navigationOpen)}
+                        >
                             <span className="pointer-events-none absolute -left-1/2 -top-1/2 -z-10 block h-full w-full -translate-x-full -translate-y-full rounded-full bg-highlight duration-200 ease-in-out-circ"
                                 style={{
                                     transform: "translate3d(72.5102px, 49.2551px, 0px)"
@@ -31,7 +38,7 @@ export default function NavBar() {
                             <span className="sr-only">Open Navigation</span>
                         </button>
 
-
+                        {/* Marque */}
                         <div className="text-highlight ml-auto transition-opacity ease-linear opacity-100">
                             <div className="flex w-72 gap-1">
                                 <div className="block w-2 rounded-sm bg-current"></div>
@@ -74,6 +81,11 @@ export default function NavBar() {
                 </header>
 
             </div>
-        </div>
+            <div className={classNames("size-full bg-highlight z-40",
+                navigationOpen? "opacity-0" : "opacity-100"
+            )}>
+                
+            </div>
+        </section>
     )
 }
