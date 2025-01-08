@@ -1,101 +1,120 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className=" font-twkEverett grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-black">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+// Define image list
+const images: string[] = [
+  "/images/BeerKeg.jpeg",
+  "/images/BeerKegs2.jpeg",
+  "/images/BeerKegsCloseUp.jpeg",
+  "/images/BeerKegsCloseUpInRack.jpeg",
+  "/images/BeerKegsInRack.jpeg",
+  "/images/BeerKegsinRack2.jpeg",
+  "/images/BeerSign.jpeg",
+  "/images/DancingOnBar.jpeg",
+  "/images/EmptyBar.jpeg",
+  "/images/EmptyHall.jpeg",
+  "/images/FestivalCandid.jpeg",
+  "/images/FestivalCandid2.jpeg",
+  "/images/FestivalCandid3.jpeg",
+  "/images/LiveMusic.jpeg",
+  "/images/PeopleAtBar.jpeg",
+  "/images/PeopleCheering.jpeg",
+  "/images/PeopleInFestivalDancing.jpeg",
+  "/images/PeopleOutsideFestival.jpeg",
+  "/images/SignOutsideFestical.jpeg",
+  "/images/StaffAtBar.jpeg",
+];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-reground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+export default function Home() {
+  // States
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [layers, setLayers] = useState<number[]>([]); // Tracks top & bottom images
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+
+  // Random delay generator
+  const getRandomDelay = (): number => Math.floor(Math.random() * 8000) + 4000; // Random 2-5 sec
+
+  useEffect(() => {
+    const startAnimation = () => {
+      if (isAnimating) return;
+      setIsAnimating(true);
+
+      // Identify current (top) and next (bottom) images
+      const nextIndex = (currentIndex + 1) % images.length;
+      setLayers([currentIndex, nextIndex]);
+
+      // After animation is done, update currentIndex
+      setTimeout(() => {
+        setCurrentIndex(nextIndex);
+        setIsAnimating(false);
+        setLayers([]); // Clear layers after we settle on the new image
+      }, 1500);
+    };
+
+    // Schedule the animation with a random delay
+    const timeout = setTimeout(startAnimation, getRandomDelay());
+    return () => clearTimeout(timeout);
+  }, [currentIndex, isAnimating]);
+
+  return (
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16">
+      <main className="size-full flex flex-col gap-8 items-center">
+        <div className="relative w-full overflow-hidden min-h-[100svh]">
+          {images.map((src, index) => {
+            // Is this the top (current) image?
+            const isTop = layers[0] === index;
+            // Is this the bottom (next) image?
+            const isBottom = layers[1] === index;
+
+            // If nothing is animating right now, only the true "currentIndex" is visible
+            // But if we’re in an animation, we want both top and bottom in the DOM.
+            const isVisible =
+              index === currentIndex || isTop || isBottom;
+
+            if (!isVisible) return null;
+
+            // We'll use dynamic classes:
+            //  - The top image slides out to the right
+            //  - The bottom image slides in from the left with a delay
+            //  - The final state is the bottom image occupying the screen.
+            let classNames = "absolute top-0 left-0 w-full h-full transition-transform ease-in-out duration-[1500ms] ";
+
+            if (isTop) {
+              // If this is the top image, it starts at translate-x-0
+              // and slides out to translate-x-full when animating
+              classNames += isAnimating ? "translate-x-full z-20" : "translate-x-0 z-20";
+            } else if (isBottom) {
+              // If this is the bottom image, it starts offscreen to the left
+              // but after a slight delay, slides into view
+              classNames += isAnimating
+                ? "translate-x-0 z-10 delay-300"
+                : "-translate-x-full z-10 delay-300";
+            } else {
+              // If not in layers but is currentIndex, it’s just the stable background
+              classNames += "translate-x-0 z-0";
+            }
+
+            return (
+              <Image
+                key={index}
+                src={src}
+                alt={`Image ${index}`}
+                fill
+                style={{ objectFit: "cover" }}
+                className={classNames}
+              />
+            );
+          })}
+          <div className="absolute top-0 w-full h-full bg-black opacity-70 z-30"/>
+          <div className="absolute bottom-0 flex items-start justify-start text-6xl font-normal z-30 m-6">
+            HELPSTON <br/>BEER FESTIVAL...
+          </div>
         </div>
+        <div className=" bg-accent size-full">Next section</div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
   );
 }
