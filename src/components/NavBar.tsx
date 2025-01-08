@@ -10,13 +10,13 @@ export default function NavBar() {
             ">
                 <header className="w-full p-6">
                     <div className="flex items-center justify-start gap-2 lg:gap-5">
-                        <Link href={"/"} legacyBehavior>
-                        <a className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-inOutCirc text-text-stone-900 bg-highlight hover:text-hightlight hover:color-black hover:text-highlight focus:text-highlight" href="/">
-                            <span className="pointer-events-none absolute -left-1/2 -top-1/2 -z-10 block h-full w-full -translate-x-full -translate-y-full rounded-full duration-200 ease-inOutCirc bg-dark"></span>
-                            <span className="pointer-events-none absolute inset-[0.5px] -z-20 block rounded-full bg-highlight"></span>
-                            <Image width={40} height={40} src={"/logo/logo1.svg"} alt={"Logo"} />
-                            <span className="sr-only">Home</span>
-                        </a>
+                        <Link href={"/"}>
+                            <div className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-inOutCirc text-text-stone-900 bg-highlight hover:text-hightlight hover:color-black hover:text-highlight focus:text-highlight">
+                                <span className="pointer-events-none absolute -left-1/2 -top-1/2 -z-10 block h-full w-full -translate-x-full -translate-y-full rounded-full duration-200 ease-inOutCirc bg-dark"></span>
+                                <span className="pointer-events-none absolute inset-[0.5px] -z-20 block rounded-full bg-highlight"></span>
+                                <Image width={40} height={40} src={"/logo/logo1.svg"} alt={"Logo"} />
+                                <span className="sr-only">Home</span>
+                            </div>
                         </Link>
 
                         <button className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-inOutCirc text-highlight hover:text-stone-900 hover:bg-highlight" type="button">
@@ -38,30 +38,30 @@ export default function NavBar() {
                                 <div className="flex w-full gap-2 overflow-hidden">
                                     <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                     </ul>
                                     <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! | 
+                                            Helpston Beer Festival | Drink for charity | Cheers! |
                                         </li>
                                     </ul>
                                 </div>
