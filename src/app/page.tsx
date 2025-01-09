@@ -2,6 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import CTAButton from "@/components/CTAButton";
+import FeatureSection from "@/components/FeatureSection";
+import Map from "@/components/Maps";
+import Link from "next/link";
 
 // Define image list
 const images: string[] = [
@@ -107,22 +111,77 @@ export default function Home() {
               />
             );
           })}
-          <div className="absolute top-0 w-full h-full bg-black opacity-70 z-30" />
+          <div className="absolute top-0 w-full h-full bg-black opacity-40 z-30" />
           <div className="absolute bottom-0 flex items-start justify-start z-30 m-6 flex-col gap-2">
-            <span className="text-6xl font-normal">
+            <span className="text-6xl md:text-8xl lg:text-9xl font-normal">
               HELPSTON
               <br />BEER FESTIVAL
             </span>
-            <span className="text-xl font-extralight ml-1">
+            <span className="text-xl md:text-3xl lg:text-4xl  font-extralight ml-1 md:ml-2">
               Community Charity Beer Festival
             </span>
           </div>
         </div>
-        <div className="odd:bg-highlight even:bg-accent [&>*]:text-black [&>*]:h-24 [&>*]:p-2 size-full">
-          <div>About the Charity</div>
-          <div>Where</div>
-          <div>Food and Drink</div>
-          <div>Sponsors</div>
+
+        <div className="size-full">
+          <div className="bg-white text-black">
+            <FeatureSection
+              subTitle={"Charity"}
+              title={"Little Miracles"} description={<>This beer festival isn’t just about great brews—it’s about making a real impact. <b>All proceeds from this year’s event will benefit Little Miracles</b>, a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
+              ctaText={"Little Miracles"}
+              link={"https://www.littlemiraclescharity.org.uk/"}
+              visualElement={
+                <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+                  <Image
+                    alt="Little miracles charity logo"
+                    src={"/other/charity.png"}
+                    width={300}
+                    height={192} />
+                </div>}
+            />
+          </div>
+          <FeatureSection
+            reverse={true}
+            subTitle={"Where"}
+            title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. Ample parking is also available for those driving to the event.</>}
+            ctaText={"Found Out Where"}
+            link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
+            visualElement={
+              <div className="size-full">
+                <Map></Map>
+              </div>}
+          />
+          <div className="bg-white text-black">
+            <FeatureSection
+              subTitle={"Food and Drink"}
+              title={"Pizza & Beer"} description={<>Amo La Pizza’s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you're a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
+              ctaText={"Find out more"}
+              link={"http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa"}
+              visualElement={
+                <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+                  <Image
+                    alt="Pizza van"
+                    src={"/other/pizza-van.jpg"}
+                    width={400}
+                    height={400} />
+                </div>}
+            />
+          </div>
+          <FeatureSection
+            reverse={true}
+            subTitle={"Sponsors"}
+            title={"Thank You"} description={<>We couldn’t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
+            <br/>
+            <br/>
+              If you’d like to join this fantastic group and help make a difference, we’d love to hear from you! Sponsoring our festival is a wonderful way to give back, connect with the community, and showcase your brand to thousands of attendees.
+              <br/>
+              <br/>
+
+              Interested in becoming a sponsor? Get in touch with us at
+              <Link className="font-bold underline mx-1" href={"mailto:stuartbunn59@hotmail.com"}>stuartbunn59@hotmail.com</Link>for more information. Together, we can make a lasting impact. Cheers to that!</>}
+            ctaText={"Become a Sponsor"}
+            link={"mailto:stuartbunn59@hotmail.com"}
+          />
         </div>
 
       </main>
