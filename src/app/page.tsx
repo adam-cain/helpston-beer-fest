@@ -59,8 +59,8 @@ export default function Home() {
   }, [currentIndex, isAnimating]);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen gap-16">
-      <main className="size-full flex flex-col gap-8 items-center">
+    <div className="items-center justify-items-center min-h-screen">
+      <main className="size-full flex flex-col items-center">
         <div className="relative w-full overflow-hidden min-h-[100svh]">
           {images.map((src, index) => {
             // Is this the top (current) image?
@@ -107,14 +107,37 @@ export default function Home() {
               />
             );
           })}
-          <div className="absolute top-0 w-full h-full bg-black opacity-70 z-30"/>
-          <div className="absolute bottom-0 flex items-start justify-start text-6xl font-normal z-30 m-6">
-            HELPSTON <br/>BEER FESTIVAL...
+          <div className="absolute top-0 w-full h-full bg-black opacity-70 z-30" />
+          <div className="absolute bottom-0 flex items-start justify-start z-30 m-6 flex-col gap-2">
+            <span className="text-6xl font-normal">
+              HELPSTON
+              <br />BEER FESTIVAL
+            </span>
+            <span className="text-xl font-extralight ml-1">
+              Community Charity Beer Festival
+            </span>
           </div>
         </div>
-        <div className=" bg-accent h-24 size-full">Next section</div>
+        <div className="odd:bg-highlight even:bg-accent [&>*]:text-black [&>*]:h-24 [&>*]:p-2 size-full">
+          <div>About the Charity</div>
+          <div>Where</div>
+          <div>Food and Drink</div>
+          <div>Sponsors</div>
+        </div>
+
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
   );
 }
+
+// * About the Charity - Little Miracles main beneficiary
+// * How to get there,
+// - Bus timetable: public/other/BusTimetables.pdf
+// - what 3 words: https://w3w.co/helpless.conforms.wealth
+// - google maps: https://maps.app.goo.gl/VynhgiMLfBig4Eyn8
+// * Food and Drink
+// - Pizza Van - http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa
+// - Beer selection
+// * Sponsors ~12
+// 

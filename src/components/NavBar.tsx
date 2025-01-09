@@ -45,30 +45,30 @@ export default function NavBar() {
                                 <div className="flex w-full gap-2 overflow-hidden">
                                     <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                     </ul>
                                     <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                         <li className="text-14 font-mono leading-none tracking-tight">
-                                            Helpston Beer Festival | Drink for charity | Cheers! |
+                                            Helpston Beer Festival | Drink for charity | 22th March |
                                         </li>
                                     </ul>
                                 </div>
