@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import CTAButton from "@/components/CTAButton";
 import FeatureSection from "@/components/FeatureSection";
 import Map from "@/components/Maps";
 import Link from "next/link";
@@ -73,13 +72,13 @@ export default function Home() {
             const isBottom = layers[1] === index;
 
             // If nothing is animating right now, only the true "currentIndex" is visible
-            // But if we’re in an animation, we want both top and bottom in the DOM.
+            // But if we&apos;re in an animation, we want both top and bottom in the DOM.
             const isVisible =
               index === currentIndex || isTop || isBottom;
 
             if (!isVisible) return null;
 
-            // We'll use dynamic classes:
+            // We&apos;ll use dynamic classes:
             //  - The top image slides out to the right
             //  - The bottom image slides in from the left with a delay
             //  - The final state is the bottom image occupying the screen.
@@ -96,7 +95,7 @@ export default function Home() {
                 ? "translate-x-0 z-10 delay-300"
                 : "-translate-x-full z-10 delay-300";
             } else {
-              // If not in layers but is currentIndex, it’s just the stable background
+              // If not in layers but is currentIndex, it&apos;s just the stable background
               classNames += "translate-x-0 z-0";
             }
 
@@ -127,7 +126,7 @@ export default function Home() {
           <div className="bg-white text-black">
             <FeatureSection
               subTitle={"Charity"}
-              title={"Little Miracles"} description={<>This beer festival isn’t just about great brews—it’s about making a real impact. <b>All proceeds from this year’s event will benefit Little Miracles</b>, a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
+              title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>All proceeds from this year&apos;s event will benefit Little Miracles</b>, a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
               ctaText={"Little Miracles"}
               link={"https://www.littlemiraclescharity.org.uk/"}
               visualElement={
@@ -154,7 +153,7 @@ export default function Home() {
           <div className="bg-white text-black">
             <FeatureSection
               subTitle={"Food and Drink"}
-              title={"Pizza & Beer"} description={<>Amo La Pizza’s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you're a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
+              title={"Pizza & Beer"} description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
               ctaText={"Find out more"}
               link={"http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa"}
               visualElement={
@@ -170,10 +169,10 @@ export default function Home() {
           <FeatureSection
             reverse={true}
             subTitle={"Sponsors"}
-            title={"Thank You"} description={<>We couldn’t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
+            title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
             <br/>
             <br/>
-              If you’d like to join this fantastic group and help make a difference, we’d love to hear from you! Sponsoring our festival is a wonderful way to give back, connect with the community, and showcase your brand to thousands of attendees.
+              If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back, connect with the community, and showcase your brand to thousands of attendees.
               <br/>
               <br/>
 
