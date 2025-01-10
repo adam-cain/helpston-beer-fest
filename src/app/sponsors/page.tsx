@@ -1,7 +1,7 @@
-export default function About(){
+import ComingSoon from "@/components/ComingSoon";
+
+export default function FoodAndDrink() {
     return(
-        <div>
-            about
-        </div>
+        <ComingSoon></ComingSoon>
     )
 }

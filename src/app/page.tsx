@@ -125,7 +125,7 @@ export default function Home() {
         <div className="size-full">
             <FeatureSection
               subTitle={"Charity"}
-              title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>All proceeds from this year&apos;s event will benefit Little Miracles</b>, a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
+              title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>Proceeds from this year&apos;s event will benefit Little Miracles and other local charities</b>. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
               ctaText={"Little Miracles"}
               link={"https://www.littlemiraclescharity.org.uk/"}
               visualElement={
@@ -141,7 +141,7 @@ export default function Home() {
           <FeatureSection
             reverse={true}
             subTitle={"Where"}
-            title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. Ample parking is also available for those driving to the event.</>}
+            title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is limited on street parking for those driving to the event.</>}
             ctaText={"Found Out Where"}
             link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
             visualElement={
@@ -169,7 +169,7 @@ export default function Home() {
             title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
             <br/>
             <br/>
-              If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back, connect with the community, and showcase your brand to thousands of attendees.
+              If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back.
               <br/>
               <br/>
 
