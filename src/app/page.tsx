@@ -117,7 +117,7 @@ export default function Home() {
               <br />BEER FESTIVAL
             </span>
             <span className="text-xl md:text-3xl lg:text-4xl  font-extralight ml-1 md:ml-2">
-              Community Charity Beer Festival
+              March 22nd 2025
             </span>
           </div>
         </div>
