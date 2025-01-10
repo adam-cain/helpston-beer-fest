@@ -123,7 +123,6 @@ export default function Home() {
         </div>
 
         <div className="size-full">
-          <div className="bg-white text-black">
             <FeatureSection
               subTitle={"Charity"}
               title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>All proceeds from this year&apos;s event will benefit Little Miracles</b>, a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
@@ -150,7 +149,6 @@ export default function Home() {
                 <Map></Map>
               </div>}
           />
-          <div className="bg-white text-black">
             <FeatureSection
               subTitle={"Food and Drink"}
               title={"Pizza & Beer"} description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
@@ -165,7 +163,6 @@ export default function Home() {
                     height={400} />
                 </div>}
             />
-          </div>
           <FeatureSection
             reverse={true}
             subTitle={"Sponsors"}
@@ -181,7 +178,6 @@ export default function Home() {
             ctaText={"Become a Sponsor"}
             link={"mailto:stuartbunn59@hotmail.com"}
           />
-        </div>
 
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
