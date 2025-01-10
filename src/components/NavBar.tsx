@@ -84,7 +84,7 @@ export default function NavBar() {
                             <span className="sr-only">Open Navigation</span>
                         </button>
                         {/* Marquee */}
-                        <Marque />
+                        <Marque className="text-black"/>
                     </div>
                 </header>
             </div>
@@ -110,7 +110,7 @@ export default function NavBar() {
                 </div>
 
 
-                <nav className="space-y-6 flex flex-col group w-1/2 h-full justify-center px-2 border-r border-black & sm:text-3x">
+                <nav className="space-y-6 flex flex-col group w-1/2 h-full justify-center px-2 border-r border-black [&>*]:before:content sm:text-3x">
                     <Link
                         href="/"
                         className="nav-link uppercase text-3xl sm:text-5xl group-hover:opacity-50 hover:!opacity-100"
