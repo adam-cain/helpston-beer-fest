@@ -145,7 +145,7 @@ export default function Home() {
             ctaText={"Found Out Where"}
             link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
             visualElement={
-              <div className="size-full">
+              <div className="size-full h-[60vw] sm:h-full">
                 <Map></Map>
               </div>}
           />
