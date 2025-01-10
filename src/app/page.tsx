@@ -26,7 +26,7 @@ const images: string[] = [
   "/images/PeopleCheering.jpeg",
   "/images/PeopleInFestivalDancing.jpeg",
   "/images/PeopleOutsideFestival.jpeg",
-  "/images/SignOutsideFestical.jpeg",
+  "/images/SignOutsideFestival.jpeg",
   "/images/StaffAtBar.jpeg",
 ];
 

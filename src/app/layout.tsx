@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://helpstonbeerfestival.com/images/helpston-beer-festival.jpg",
+        url: "https://helpstonbeerfestival.com/images/SignOutsideFestival.jpg",
         width: 800,
         height: 600,
         alt: "Helpston Beer Festival"
@@ -41,6 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" href="/logo/logo2.svg" type="image/svg+xml" />
+      </head>      
       <body className="font-twkEverett bg-black text-white">
         <NavBar/>
         {children}
