@@ -167,9 +167,9 @@ export default function Home() {
           reverse={true}
           subTitle={"Sponsors"}
           title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
+            {/* <br />
             <br />
-            <br />
-            If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back.
+            If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back. */}
             <br />
             <br />
 
