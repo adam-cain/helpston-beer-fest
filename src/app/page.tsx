@@ -151,9 +151,10 @@ export default function Home() {
         />
         <FeatureSection
           subTitle={"Food and Drink"}
-          title={"Pizza & Beer"} description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
+          title={"Pizza & Beer"} 
+          description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one beers and ales from 7 local breweries. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
           ctaText={"Find out more"}
-          link={"http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa"}
+          link={"http://www.amolapizza.uk/"}
           visualElement={
             <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
               <Image
@@ -165,6 +166,22 @@ export default function Home() {
         />
         <FeatureSection
           reverse={true}
+          subTitle={"Live Music"}
+          title={"The Zephyrs"} 
+          description={<>Join us for an unforgettable evening with <strong>The Zephyrs</strong>, a local band from the Peterborough area, known for their energetic performances and captivating mix of classic rock and popular hits. Don&apos;t miss their live set starting at 7:30 pm this Saturday!</>}
+          ctaText={"Discover The Band"}
+          link={"https://www.facebook.com/p/The-Zephyrs-100077795577286/"}
+          visualElement={
+            <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+              <Image
+                alt="The Zephyrs"
+                src={"/other/zephyrs.jpg"}
+                width={400}
+                height={400} />
+            </div>}
+        />
+        <FeatureSection
+          reverse={false}
           subTitle={"Sponsors"}
           title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
             {/* <br />
