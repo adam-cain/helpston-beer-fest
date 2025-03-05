@@ -54,7 +54,7 @@ export default function NavBar() {
                         </Link>
 
                         <button
-                            className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-in-out-circ text-highlight hover:text-stone-900 hover:bg-highlight"
+                            className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-in-out-circ text-highlight hover:bg-highlight"
                             type="button"
                             onClick={() => setNavigationOpen(!navigationOpen)}
                         >
@@ -65,23 +65,24 @@ export default function NavBar() {
                                 }}
                             />
                             <span className="pointer-events-none absolute inset-[0.5px] -z-20 block rounded-full bg-stone-900"></span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 20 8"
-                                className="inline-block h-[8px] w-[20px]"
-                            >
-                                <rect width="19.543" height="2" fill="currentColor" rx="1"></rect>
-                                <rect
-                                    width="19.543"
-                                    height="2"
-                                    y="6"
-                                    fill="currentColor"
-                                    rx="1"
-                                ></rect>
-                            </svg>
-
-                            <span className="sr-only">Open Navigation</span>
+                            <div className="w-[20px] h-[16px] relative -translate-x-2.5">
+                                <span 
+                                    className={`absolute w-full h-[2px] bg-current rounded-full transition-all duration-300 ${
+                                        navigationOpen ? "top-[7px] rotate-45" : "top-0"
+                                    }`}
+                                ></span>
+                                <span 
+                                    className={`absolute w-full h-[2px] bg-current rounded-full transition-all duration-300 ${
+                                        navigationOpen ? "opacity-0" : "top-[7px] opacity-100"
+                                    }`}
+                                ></span>
+                                <span 
+                                    className={`absolute w-full h-[2px] bg-current rounded-full transition-all duration-300 ${
+                                        navigationOpen ? "bottom-[7px] -rotate-45" : "bottom-0"
+                                    }`}
+                                ></span>
+                            </div>
+                            <span className="sr-only">{navigationOpen ? "Close" : "Open"} Navigation</span>
                         </button>
                         {/* Marquee */}
                         <Marque className="text-black"/>
