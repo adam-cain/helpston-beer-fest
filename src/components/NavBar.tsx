@@ -146,6 +146,13 @@ export default function NavBar() {
                     >
                         Sponsors
                     </Link>
+                    <Link
+                        href="https://www.facebook.com/people/Helpston-Beer-Festival/61569622453634/"
+                        className="nav-link uppercase text-3xl sm:text-5xl group-hover:opacity-50 hover:!opacity-100"
+                        onClick={() => setNavigationOpen(false)}
+                    >
+                        News
+                    </Link>
                 </nav>
             </div>
         </section>

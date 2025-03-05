@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://helpstonbeerfestival.com/images/SignOutsideFestival.jpg",
+        url: "images/frontpage/SignOutsideFestival.jpg",
         width: 800,
         height: 600,
         alt: "Helpston Beer Festival"
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: "Join us for beer, music, and fun while supporting Little Miracles at the Helpston Beer Festival.",
     images: [
       {
-        url: "https://helpstonbeerfestival.com/images/SignOutsideFestival.jpg",
+        url: "images/frontpage/SignOutsideFestival.jpg",
         alt: "Helpston Beer Festival"
       }
     ]
