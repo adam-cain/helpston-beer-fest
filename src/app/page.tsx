@@ -141,7 +141,9 @@ export default function Home() {
         <FeatureSection
           reverse={true}
           subTitle={"Where"}
-          title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is limited on street parking for those driving to the event.</>}
+          title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at <b>Helpston Village Hall</b>, centrally located in the village of Helpston near Peterborough. 
+          <br /><br />
+          The venue is <b>easy to access</b>, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is <b>limited on street parking</b> for those driving to the event.</>}
           ctaText={"Found Out Where"}
           link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
           visualElement={
@@ -151,8 +153,18 @@ export default function Home() {
         />
         <FeatureSection
           subTitle={"Food and Drink"}
-          title={"Pizza & Beer"} 
-          description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one beers and ales from 7 local breweries. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
+          title={"Pizza & Beer"}
+          description={
+            <>
+              Enjoy <b>ales and beers from 7 local breweries</b>, perfectly paired with fresh, authentic, wood-fired pizza from <Link href="http://www.amolapizza.uk/"><b>Amo La Pizza</b></Link>&apos;s iconic pizza van.
+
+              <br /><br />
+              Grasmere Farm will also be joining us with their delicious <Link href="https://www.grasmere-farm.co.uk/product/grasmere-grunta-our-signature-snack-salami/"><b>Grasmere Grunta Signature Snack Salami</b></Link>, plus providing a hamper as a prize for our Friday night quiz.
+
+              <br /><br />
+              Topped off with fresh, hot donuts from <Link href="https://www.facebook.com/share/18h1MGNbvc/"><b>Shelley Bibby</b></Link>—could it get any better?
+            </>
+          }
           ctaText={"Find out more"}
           link={"http://www.amolapizza.uk/"}
           visualElement={
@@ -161,14 +173,22 @@ export default function Home() {
                 alt="Pizza van"
                 src={"/other/pizza-van.jpg"}
                 width={400}
-                height={400} />
-            </div>}
+                height={400}
+              />
+            </div>
+          }
         />
         <FeatureSection
           reverse={true}
           subTitle={"Live Music"}
-          title={"The Zephyrs"} 
-          description={<>Join us for an unforgettable evening with <strong>The Zephyrs</strong>, a local band from the Peterborough area, known for their energetic performances and captivating mix of classic rock and popular hits. Don&apos;t miss their live set starting at 7:30 pm this Saturday!</>}
+          title={"The Zephyrs"}
+          description={
+            <>
+              Join us for an unforgettable evening with <strong>The Zephyrs</strong>, a local band from the Peterborough area, known for their energetic performances and captivating mix of classic rock and popular hits.
+              <br /><br />
+
+              Don&apos;t miss their live set starting at <b>7:30 pm this Saturday!</b>
+            </>}
           ctaText={"Discover The Band"}
           link={"https://www.facebook.com/p/The-Zephyrs-100077795577286/"}
           visualElement={
