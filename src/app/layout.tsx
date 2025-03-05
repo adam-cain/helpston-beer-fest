@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   robots: "index, follow",
   creator: "Helpston Beer Festival Team",
   publisher: "Helpston Beer Festival Committee",
+  metadataBase: new URL('https://helpstonbeerfestival.com'),
   openGraph: {
     title: "Helpston Charity Beer Festival",
     description: "Enjoy local beers, live music, and great food while supporting a worthy cause. Join us for a memorable day at the Helpston Beer Festival!",
