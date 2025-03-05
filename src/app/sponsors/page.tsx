@@ -1,8 +1,7 @@
 import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
-import CTAButton from "@/components/CTAButton";
-import { Beer, Heart, Users, Award } from "lucide-react";
+import { Beer } from "lucide-react";
 
 // Define the sponsor type
 type Sponsor = {
@@ -269,13 +268,13 @@ export default function Sponsors() {
               <Beer size={200} />
             </div>
             <h2 className="text-4xl font-light mb-6 relative z-10">Become a Sponsor</h2>
-            <p className="text-xl font-light mb-8 relative z-10">
-              Interested in becoming a sponsor for next year's Helpston Beer Festival? 
+            <p className="text-xl font mb-8 relative z-10">
+              Interested in becoming a sponsor for next year&apos;s Helpston Beer Festival? 
               Join our community of supporters and gain visibility while helping to make
               this beloved community event a success.
             </p>
             <p className="text-stone-900">
-              For sponsorship inquiries, please email <a href="mailto:stuartbunn59@hotmail.com" className="bg-stone-900 text-highlight hover:underline px-2 py-1">stuartbunn59@hotmail.com</a>
+              For sponsorship inquiries, please email <a href="mailto:stuartbunn59@hotmail.com" className="bg-stone-900 text-highlight hover:underline px-3 py-2 ml-1">stuartbunn59@hotmail.com</a>
             </p>
           </div>
         </div>

@@ -123,61 +123,61 @@ export default function Home() {
         </div>
 
         <div className="size-full">
-            <FeatureSection
-              subTitle={"Charity"}
-              title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>Proceeds from this year&apos;s event will benefit Little Miracles and other local charities</b>. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
-              ctaText={"Little Miracles"}
-              link={"https://www.littlemiraclescharity.org.uk/"}
-              visualElement={
-                <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
-                  <Image
-                    alt="Little miracles charity logo"
-                    src={"/other/charity.png"}
-                    width={300}
-                    height={192} />
-                </div>}
-            />
-          </div>
           <FeatureSection
-            reverse={true}
-            subTitle={"Where"}
-            title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is limited on street parking for those driving to the event.</>}
-            ctaText={"Found Out Where"}
-            link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
+            subTitle={"Charity"}
+            title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>Proceeds from this year&apos;s event will benefit Little Miracles and other local charities</b>. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
+            ctaText={"Little Miracles"}
+            link={"https://www.littlemiraclescharity.org.uk/"}
             visualElement={
-              <div className="size-full h-[60vw] sm:h-full">
-                <Map></Map>
+              <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+                <Image
+                  alt="Little miracles charity logo"
+                  src={"/other/charity.png"}
+                  width={300}
+                  height={192} />
               </div>}
           />
-            <FeatureSection
-              subTitle={"Food and Drink"}
-              title={"Pizza & Beer"} description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
-              ctaText={"Find out more"}
-              link={"http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa"}
-              visualElement={
-                <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
-                  <Image
-                    alt="Pizza van"
-                    src={"/other/pizza-van.jpg"}
-                    width={400}
-                    height={400} />
-                </div>}
-            />
-          <FeatureSection
-            reverse={true}
-            subTitle={"Sponsors"}
-            title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
-            <br/>
-            <br/>
-              If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back.
-              <br/>
-              <br/>
+        </div>
+        <FeatureSection
+          reverse={true}
+          subTitle={"Where"}
+          title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is limited on street parking for those driving to the event.</>}
+          ctaText={"Found Out Where"}
+          link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
+          visualElement={
+            <div className="size-full h-[60vw] sm:h-full">
+              <Map></Map>
+            </div>}
+        />
+        <FeatureSection
+          subTitle={"Food and Drink"}
+          title={"Pizza & Beer"} description={<>Amo La Pizza&apos;s iconic pizza van is bringing its legendary wood-fired creations straight to you, serving up fresh, authentic pies that are impossible to resist. Pair your slice with one of ~15 beers on offer, More information about them soon. Whether you&apos;re a pizza lover, a beer enthusiast, or both, this is your perfect match-up.</>}
+          ctaText={"Find out more"}
+          link={"http://www.amolapizza.uk/?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa?fbclid=IwZXh0bgNhZW0CMTEAAR36dEvDZ8Cpia-HE4s4v5iK59sRl5QUAG75ohWIDtFMnMxJa7xj9kP3UJA_aem_teNgZzcbWX5xsvUbp-Y1RQ&sfnsn=scwspwa"}
+          visualElement={
+            <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+              <Image
+                alt="Pizza van"
+                src={"/other/pizza-van.jpg"}
+                width={400}
+                height={400} />
+            </div>}
+        />
+        <FeatureSection
+          reverse={true}
+          subTitle={"Sponsors"}
+          title={"Thank You"} description={<>We couldn&apos;t raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen.
+            <br />
+            <br />
+            If you&apos;d like to join this fantastic group and help make a difference, we&apos;d love to hear from you! Sponsoring our festival is a wonderful way to give back.
+            <br />
+            <br />
 
-              Interested in becoming a sponsor? Get in touch with us at
-              <Link className="font-bold underline mx-1" href={"mailto:stuartbunn59@hotmail.com"}>stuartbunn59@hotmail.com</Link>for more information. Together, we can make a lasting impact. Cheers to that!</>}
-            ctaText={"Become a Sponsor"}
-            link={"mailto:stuartbunn59@hotmail.com"}
-          />
+            Interested in becoming a sponsor? Get in touch with us at
+            <Link className="font-bold underline mx-1" href={"mailto:stuartbunn59@hotmail.com"}>stuartbunn59@hotmail.com</Link>for more information. Together, we can make a lasting impact. Cheers to that!</>}
+          ctaText={"Meet Our Generous Sponsors"}
+          link={"/sponsors"}
+        />
 
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
