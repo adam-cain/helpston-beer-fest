@@ -5,6 +5,7 @@ import Image from "next/image";
 import FeatureSection from "@/components/FeatureSection";
 import Map from "@/components/Maps";
 import Link from "next/link";
+import FlyerPopup from "@/components/FlyerPopup";
 
 // Define image list
 const images: string[] = [
@@ -64,6 +65,7 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center min-h-screen">
       <main className="size-full flex flex-col items-center">
+        <FlyerPopup popupId="beer-fest-flyer" />
         <div className="relative w-full overflow-hidden min-h-[100svh]">
           {images.map((src, index) => {
             // Is this the top (current) image?
