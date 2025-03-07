@@ -171,7 +171,7 @@ export default function Home() {
             <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
               <Image
                 alt="Pizza van"
-                src={"/food/pizza-van.jpg"}
+                src={"/images/food/pizza-van.jpg"}
                 width={400}
                 height={400}
               />
