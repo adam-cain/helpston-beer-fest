@@ -120,7 +120,7 @@ export default function NavBar() {
                         Home
                     </Link>
                     <Link
-                        href="/charities"
+                        href="https://www.littlemiraclescharity.org.uk/"
                         className="nav-link uppercase text-3xl sm:text-5xl group-hover:opacity-50 hover:!opacity-100"
                         onClick={() => setNavigationOpen(false)}
                     >

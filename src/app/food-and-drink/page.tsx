@@ -85,56 +85,70 @@ export default function FoodAndDrink() {
                 ctaText={"View Breweries"}
                 link={"/breweries"}
                 visualElement={
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <Image
-                            alt="Castor Brewery"
-                            src={"/images/breweries/castor.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Oakham Ales"
-                            src={"/images/breweries/oakham.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Nene Valley Brewery"
-                            src={"/images/breweries/nene.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Pot Belly Brewery"
-                            src={"/images/breweries/potbelly.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Kings Cliffe Brewery"
-                            src={"/images/breweries/KCB.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Bloke Down Brewery"
-                            src={"/images/breweries/blokedown.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
-                        <Image
-                            alt="Bowlers Brewery"
-                            src={"/images/breweries/bowlers.png"}
-                            width={150}
-                            height={150}
-                            className="object-contain"
-                        />
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
+                        <Link href="http://www.castorales.co.uk/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Castor Brewery"
+                                src={"/images/breweries/castor.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="https://www.oakhamales.com/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Oakham Ales"
+                                src={"/images/breweries/oakham.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="https://nenevalleybrewery.com/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Nene Valley Brewery"
+                                src={"/images/breweries/nene.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="https://potbellybrewery.co.uk/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Pot Belly Brewery"
+                                src={"/images/breweries/potbelly.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="https://www.kcbales.co.uk/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Kings Cliffe Brewery"
+                                src={"/images/breweries/KCB.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="https://ablokedownthepub.co.uk/" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Bloke Down Brewery"
+                                src={"/images/breweries/blokedown.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto"
+                            />
+                        </Link>
+                        <Link href="http://www.bowlers.beer" target="_blank" rel="noopener noreferrer">
+                            <Image
+                                alt="Bowlers Brewery"
+                                src={"/images/breweries/bowlers.png"}
+                                width={150}
+                                height={150}
+                                className="object-contain mx-auto drop-shadow-[0_0_1px_rgba(0,0,0,0.9)]"
+                            />
+                        </Link>
                     </div>
                 }
             />
