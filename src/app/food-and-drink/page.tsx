@@ -73,7 +73,7 @@ export default function FoodAndDrink() {
                     <>
                         Our festival proudly features <b>ales and beers from 7 local breweries</b>, offering 
                         a wide variety of flavors and styles to discover. From traditional ales to 
-                        innovative craft beers, there's something for every beer enthusiast.
+                        innovative craft beers, there&apos;s something for every beer enthusiast.
                         
                         <br /><br />
                         
@@ -159,7 +159,7 @@ export default function FoodAndDrink() {
                 title={"Amo La Pizza"}
                 description={
                     <>
-                        Perfectly paired with our local brews, enjoy fresh, authentic, wood-fired pizza from <Link href="http://www.amolapizza.uk/"><b>Amo La Pizza</b></Link>'s iconic pizza van.
+                        Perfectly paired with our local brews, enjoy fresh, authentic, wood-fired pizza from <Link href="http://www.amolapizza.uk/"><b>Amo La Pizza</b></Link>&apos;s iconic pizza van.
                         
                         <br /><br />
                         
