@@ -168,7 +168,7 @@ export default function Home() {
             </>
           }
           ctaText={"Find out more"}
-          link={"http://www.amolapizza.uk/"}
+          link={"/food-and-drink"}
           visualElement={
             <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
               <Image
