@@ -113,7 +113,7 @@ export default function Home() {
             );
           })}
           <div className="absolute top-0 w-full h-full bg-black opacity-40 z-30" />
-          <div className="absolute bottom-0 flex items-start justify-start z-30 m-6 flex-col gap-2">
+          <div className="absolute bottom-0 flex items-start justify-start z-30 m-3 sm:m-6 flex-col gap-2">
             <span className="text-6xl md:text-8xl lg:text-9xl font-normal">
               HELPSTON
               <br />BEER FESTIVAL

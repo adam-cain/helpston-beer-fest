@@ -37,7 +37,7 @@ export default function NavBar() {
             ></div>
             {/* Scroll animation -translate-y-28 lg:-translate-y-32 */}
             <div className="fixed left-0 top-0 z-50 w-full transition-all duration-500 pointer-events-auto opacity-1">
-                <header className="w-full p-6">
+                <header className="w-full p-3 sm:p-6">
                     <div className="flex items-center justify-start gap-2 lg:gap-5">
                         <Link href={"/"}>
                             <div className="outline-none relative z-0 flex h-[52px] w-[52px] shrink-0 select-none items-center justify-center overflow-hidden whitespace-nowrap rounded-full no-underline transition-all duration-200 ease-in-out-circ text-text-stone-900 bg-highlight hover:text-hightlight  hover:bg-highlight ">
