@@ -144,7 +144,7 @@ export default function Home() {
           title={"Helpston Village Hall"} description={<>The Beer Festival is hosted at <b>Helpston Village Hall</b>, centrally located in the village of Helpston near Peterborough. 
           <br /><br />
           The venue is <b>easy to access</b>, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is <b>limited on street parking</b> for those driving to the event.</>}
-          ctaText={"Found Out Where"}
+          ctaText={"Find Out Where"}
           link={"https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"}
           visualElement={
             <div className="size-full h-[60vw] sm:h-full">
