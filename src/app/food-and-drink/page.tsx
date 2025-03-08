@@ -117,7 +117,7 @@ export default function FoodAndDrink() {
                 ctaText={"Visit Amo La Pizza"}
                 link={"http://www.amolapizza.uk/"}
                 visualElement={
-                    <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+                    <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center flex-grow">
                         <Image
                             alt="Pizza van"
                             src={"/images/food/pizza-van.jpg"}
@@ -144,7 +144,7 @@ export default function FoodAndDrink() {
                 ctaText={"Visit Grasmere Farm"}
                 link={"https://www.grasmere-farm.co.uk/"}
                 visualElement={
-                    <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
+                    <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center h-full">
                         <Image
                             alt="Pizza van"
                             src={"/images/sponsors/grasmere.svg"}

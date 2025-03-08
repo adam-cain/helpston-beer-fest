@@ -116,7 +116,7 @@ const VisualElement = ({
 }) => {
   return (
     visualElement ? (
-      <div className={classNames('size-full overflow-hidden m-auto', className)}>
+      <div className={classNames('size-full flex items-center justify-center overflow-hidden m-auto', className)}>
         {visualElement}
       </div>
     ) : null

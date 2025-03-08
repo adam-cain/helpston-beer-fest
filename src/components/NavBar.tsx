@@ -134,7 +134,7 @@ export default function NavBar() {
                         Food and Drink
                     </Link>
                     <Link
-                        href="/getting-here"
+                        href="https://maps.app.goo.gl/VynhgiMLfBig4Eyn8"
                         className="nav-link uppercase text-3xl sm:text-5xl group-hover:opacity-50 hover:!opacity-100"
                         onClick={() => setNavigationOpen(false)}
                     >
