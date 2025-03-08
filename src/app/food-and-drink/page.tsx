@@ -1,57 +1,3 @@
-// Hi,
-
-// Could you add these to the food section please?
-
-// www.grasmere-farm.co.uk
-
-// In particular to this product they are supplying:
-// Grasmere Grunta – Our Signature Snack Salami - Grasmere Farm
-
-// And for providing a hamper as a prize for the for the Friday night quiz.
-
-// Shelley Bibby
-// https://www.facebook.com/share/18h1MGNbvc/
-
-// Amos pizza
-//
-
-// This should be a link to a donut vender - not a great deal of information, but they are providing hot donuts.
-
-// Cheers
-
-// images directories:
-// images/breweries
-// images/food
-
-// Front page food and drink section
-{/* <FeatureSection
-subTitle={"Food and Drink"}
-title={"Pizza & Beer"}
-description={
-  <>
-    Enjoy <b>ales and beers from 7 local breweries</b>, perfectly paired with fresh, authentic, wood-fired pizza from <Link href="http://www.amolapizza.uk/"><b>Amo La Pizza</b></Link>&apos;s iconic pizza van.
-
-    <br /><br />
-    Grasmere Farm will also be joining us with their delicious <Link href="https://www.grasmere-farm.co.uk/product/grasmere-grunta-our-signature-snack-salami/"><b>Grasmere Grunta Signature Snack Salami</b></Link>, plus providing a hamper as a prize for our Friday night quiz.
-
-    <br /><br />
-    Topped off with fresh, hot donuts from <Link href="https://www.facebook.com/share/18h1MGNbvc/"><b>Shelley Bibby</b></Link>—could it get any better?
-  </>
-}
-ctaText={"Find out more"}
-link={"http://www.amolapizza.uk/"}
-visualElement={
-  <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
-    <Image
-      alt="Pizza van"
-      src={"/food/pizza-van.jpg"}
-      width={400}
-      height={400}
-    />
-  </div>
-}
-/> */}
-
 import Image from "next/image";
 import Link from "next/link";
 import FeatureSection from "@/components/FeatureSection";
@@ -71,14 +17,14 @@ export default function FoodAndDrink() {
                 title={"7 Amazing Local Breweries"}
                 description={
                     <>
-                        Our festival proudly features <b>ales and beers from 7 local breweries</b>, offering 
-                        a wide variety of flavors and styles to discover. From traditional ales to 
+                        Our festival proudly features <b>ales and beers from 7 local breweries</b>, offering
+                        a wide variety of flavors and styles to discover. From traditional ales to
                         innovative craft beers, there&apos;s something for every beer enthusiast.
-                        
+
                         <br /><br />
-                        
-                        Meet the brewers, learn about their craft, and sample some of the finest 
-                        beers from our region. Each brewery brings its own unique character and passion 
+
+                        Meet the brewers, learn about their craft, and sample some of the finest
+                        beers from our region. Each brewery brings its own unique character and passion
                         to create an exceptional tasting experience.
                     </>
                 }
@@ -160,11 +106,11 @@ export default function FoodAndDrink() {
                 description={
                     <>
                         Perfectly paired with our local brews, enjoy fresh, authentic, wood-fired pizza from <Link href="http://www.amolapizza.uk/"><b>Amo La Pizza</b></Link>&apos;s iconic pizza van.
-                        
+
                         <br /><br />
-                        
-                        Amo La Pizza brings traditional Italian flavors made with the finest ingredients, 
-                        prepared and cooked right before your eyes in their wood-fired oven. The perfect 
+
+                        Amo La Pizza brings traditional Italian flavors made with the finest ingredients,
+                        prepared and cooked right before your eyes in their wood-fired oven. The perfect
                         complement to a refreshing beer!
                     </>
                 }
@@ -188,9 +134,9 @@ export default function FoodAndDrink() {
                 description={
                     <>
                         Grasmere Farm will be joining us with their delicious <Link href="https://www.grasmere-farm.co.uk/product/grasmere-grunta-our-signature-snack-salami/"><b>Grasmere Grunta Signature Snack Salami</b></Link> - the perfect beer snack!
-                        
+
                         <br /><br />
-                        
+
                         Grasmere Farm is also generously providing a hamper as a prize for our Friday night quiz,
                         packed with their quality local products.
                     </>
@@ -199,14 +145,14 @@ export default function FoodAndDrink() {
                 link={"https://www.grasmere-farm.co.uk/"}
                 visualElement={
                     <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
-                    <Image
-                        alt="Pizza van"
-                        src={"/images/sponsors/grasmere.svg"}
-                        width={400}
-                        height={400}
-                        className="my-6"
-                    />
-                </div>
+                        <Image
+                            alt="Pizza van"
+                            src={"/images/sponsors/grasmere.svg"}
+                            width={400}
+                            height={400}
+                            className="my-6"
+                        />
+                    </div>
                 }
             />
 
@@ -217,10 +163,10 @@ export default function FoodAndDrink() {
                 description={
                     <>
                         Top off your beer festival experience with fresh, hot donuts from <Link href="https://www.facebook.com/share/18h1MGNbvc/"><b>Shelley Bibby</b></Link>.
-                        
+
                         <br /><br />
-                        
-                        These delicious treats are made fresh on-site and are the perfect sweet finish 
+
+                        These delicious treats are made fresh on-site and are the perfect sweet finish
                         to complement your beer tasting adventure.
                     </>
                 }
@@ -229,8 +175,8 @@ export default function FoodAndDrink() {
                 visualElement={
                     <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center bg-amber-100 p-8 rounded-lg h-full">
                         <h3 className="text-2xl font-bold text-center text-amber-800">
-                            Freshly Made<br/>
-                            <span className="text-3xl">Hot Donuts</span><br/>
+                            Freshly Made<br />
+                            <span className="text-3xl">Hot Donuts</span><br />
                             <span className="text-lg font-normal">by Shelley Bibby</span>
                         </h3>
                     </div>
