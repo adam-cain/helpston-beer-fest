@@ -34,14 +34,14 @@ export default function FeatureSection({
               {/* Visual Content first when reversed, only if visualElement exists */}
               <ColumnVisualElement visualElement={visualElement} />
 
-              {/* Text Content */}
-              <div className="flex flex-col gap-5">
-                <p className="text-sm font-mono tracking-tight">{subTitle}</p>
-                <h3 className="text-4xl lg:text-5xl text-balance">{title}</h3>
+{/* Text Content */}
+                <div className="flex flex-col gap-5">
+                <p className="text-label">{subTitle}</p>
+                <h3 className="text-4xl lg:text-5xl text-title text-balance">{title}</h3>
                 <TextVisualElement
                   visualElement={visualElement}
                 />
-                <div className="text-[clamp(1rem,0.442vw+0.896rem,1.25rem)] leading-[clamp(1.125rem,0.331vw+1.047rem,1.313rem)] tracking-[-0.02em] font-sans text-balance">
+                <div className="text-[clamp(1rem,0.442vw+0.896rem,1.25rem)] text-body text-balance">
                   {description}
                 </div>
                 <div>
@@ -53,12 +53,12 @@ export default function FeatureSection({
             <>
               {/* Text Content first if NOT reversed */}
               <div className="flex flex-col gap-5">
-                <p className="text-sm font-mono tracking-tight">{subTitle}</p>
-                <h3 className="text-4xl lg:text-5xl text-balance">{title}</h3>
+                <p className="text-label">{subTitle}</p>
+                <h3 className="text-4xl lg:text-5xl text-title text-balance">{title}</h3>
                 <TextVisualElement
                   visualElement={visualElement}
                 />
-                <div className="text-[clamp(1rem,0.442vw+0.896rem,1.25rem)] leading-[clamp(1.125rem,0.331vw+1.047rem,1.313rem)] tracking-[-0.02em] font-sans text-balance">
+                <div className="text-[clamp(1rem,0.442vw+0.896rem,1.25rem)] text-body text-balance">
                   {description}
                 </div>
                 <div>

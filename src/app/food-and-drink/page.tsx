@@ -6,8 +6,8 @@ export default function FoodAndDrink() {
     return (
         <main className="pt-16 min-h-screen">
             <div className="py-12">
-                <h1 className="text-center text-5xl lg:text-6xl mb-6">Food & Drink</h1>
-                <p className="text-center text-xl max-w-3xl mx-auto px-4">
+                <h1 className="text-center text-5xl lg:text-6xl text-display mb-6">Food & Drink</h1>
+                <p className="text-center text-xl text-body max-w-3xl mx-auto px-4">
                     Enjoy a perfect pairing of local craft beers and delicious food options at our charity beer festival.
                 </p>
             </div>
@@ -174,10 +174,10 @@ export default function FoodAndDrink() {
                 link={"https://www.facebook.com/share/18h1MGNbvc/"}
                 visualElement={
                     <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center bg-amber-100 p-8 rounded-lg h-full">
-                        <h3 className="text-2xl font-bold text-center text-amber-800">
+                        <h3 className="text-2xl text-title text-center text-amber-800">
                             Freshly Made<br />
-                            <span className="text-3xl">Hot Donuts</span><br />
-                            <span className="text-lg font-normal">by Shelley Bibby</span>
+                            <span className="text-3xl text-display">Hot Donuts</span><br />
+                            <span className="text-lg text-meta">by Shelley Bibby</span>
                         </h3>
                     </div>
                 }

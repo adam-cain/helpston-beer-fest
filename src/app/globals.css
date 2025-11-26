@@ -155,3 +155,35 @@
   font-weight: 100;
   font-style: italic;
 }
+
+@layer utilities {
+  /* Display text - large headlines */
+  .text-display {
+    @apply font-bold tracking-tighter-display leading-display;
+  }
+  
+  /* Section titles - medium headlines */
+  .text-title {
+    @apply font-bold tracking-tight-display leading-display-relaxed;
+  }
+  
+  /* Subtitle/label style - uppercase with tracking */
+  .text-label {
+    @apply font-light uppercase tracking-wider-caps text-sm;
+  }
+  
+  /* Body text - readable with slight tightness */
+  .text-body {
+    @apply font-normal tracking-tight leading-relaxed;
+  }
+  
+  /* CTA text - uppercase medium weight */
+  .text-cta {
+    @apply font-medium uppercase tracking-wide-caps;
+  }
+  
+  /* Meta text - dates, times, small info */
+  .text-meta {
+    @apply font-extralight tracking-normal;
+  }
+}

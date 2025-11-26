@@ -18,6 +18,17 @@ export default {
       fontFamily: {
         twkEverett: ['TWKEverett', 'sans-serif'],
       },
+      letterSpacing: {
+        'tighter-display': '-0.03em',
+        'tight-display': '-0.02em',
+        'tight': '-0.01em',
+        'wide-caps': '0.08em',
+        'wider-caps': '0.12em',
+      },
+      lineHeight: {
+        'display': '0.95',
+        'display-relaxed': '1.1',
+      },
       transitionTimingFunction: {
         'in-out-circ': 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
       },

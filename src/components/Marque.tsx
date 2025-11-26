@@ -7,30 +7,30 @@ export default function Marque({className} : {className?: string}) {
             <div className="block w-2 rounded-sm bg-current"></div>
             <div className="flex w-full gap-2 overflow-hidden">
                 <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
                 </ul>
                 <ul className="animate-marquee flex min-w-full shrink-0 items-baseline justify-around gap-2 text-current">
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
-                    <li className=" font-mono leading-none tracking-tight">
+                    <li className="font-light leading-none tracking-wide-caps text-xs">
                         Helpston Beer Festival | Drink for charity | March 22nd |
                     </li>
                 </ul>

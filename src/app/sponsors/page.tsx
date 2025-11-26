@@ -194,7 +194,7 @@ const SponsorCard = ({ sponsor }: { sponsor: Sponsor }) => (
         )}
       </div>
     </div>
-    <h3 className={`text-xl font-medium text-center ${sponsor.color === 'dark' ? 'text-white' : 'text-black'}`}>{sponsor.name}</h3>
+    <h3 className={`text-lg text-cta normal-case text-center ${sponsor.color === 'dark' ? 'text-white' : 'text-black'}`}>{sponsor.name}</h3>
     <div className={`mt-2 opacity-0 group-hover:opacity-100 transition-opacity ${sponsor.color === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
       <span className="text-sm underline">Visit Website</span>
     </div>
@@ -248,8 +248,8 @@ export default function Sponsors() {
 
           <div className="mb-20">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-light mb-6">Our Valued Partners</h2>
-              <p className="text-xl font-light mb-4 max-w-4xl mx-auto">
+              <h2 className="text-4xl text-title mb-6">Our Valued Partners</h2>
+              <p className="text-xl text-body mb-4 max-w-4xl mx-auto">
                 Each of our sponsors plays an equal and crucial role in making the Helpston Beer Festival happen. 
                 Without their generous support, this beloved community event would not be possible. 
                 Please take a moment to explore our sponsors and support their businesses as they have supported us.
@@ -267,8 +267,8 @@ export default function Sponsors() {
             <div className="absolute top-0 right-0 opacity-10">
               <Beer size={200} />
             </div>
-            <h2 className="text-4xl font-light mb-6 relative z-10">Become a Sponsor</h2>
-            <p className="text-xl font mb-8 relative z-10">
+            <h2 className="text-4xl text-title mb-6 relative z-10">Become a Sponsor</h2>
+            <p className="text-xl text-body mb-8 relative z-10">
               Interested in becoming a sponsor for next year&apos;s Helpston Beer Festival? 
               Join our community of supporters and gain visibility while helping to make
               this beloved community event a success.
