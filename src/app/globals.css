@@ -164,7 +164,7 @@
   
   /* Section titles - medium headlines */
   .text-title {
-    @apply font-bold tracking-tight-display leading-display-relaxed;
+    @apply font-medium tracking-tight-display leading-display-relaxed;
   }
   
   /* Subtitle/label style - uppercase with tracking */
