@@ -34,8 +34,8 @@ export default function FeatureSection({
               {/* Visual Content first when reversed, only if visualElement exists */}
               <ColumnVisualElement visualElement={visualElement} />
 
-{/* Text Content */}
-                <div className="flex flex-col gap-5">
+              {/* Text Content */}
+              <div className="flex flex-col gap-5">
                 <p className="text-label">{subTitle}</p>
                 <h3 className="text-4xl lg:text-5xl text-title text-balance">{title}</h3>
                 <TextVisualElement
@@ -85,9 +85,9 @@ const TextVisualElement = ({
 }) => {
   return (
     <VisualElement
-    visualElement={visualElement}
-    className={classNames("block sm:hidden",className)}
-  />
+      visualElement={visualElement}
+      className={classNames("block sm:hidden", className)}
+    />
   )
 }
 
@@ -100,9 +100,9 @@ const ColumnVisualElement = ({
 }) => {
   return (
     <VisualElement
-    visualElement={visualElement}
-    className={classNames("hidden sm:block",className)}
-  />
+      visualElement={visualElement}
+      className={classNames("hidden sm:block", className)}
+    />
   )
 }
 
