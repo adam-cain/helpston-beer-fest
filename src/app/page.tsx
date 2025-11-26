@@ -127,7 +127,7 @@ export default function Home() {
         <div className="size-full">
           <FeatureSection
             subTitle={"Charity"}
-            title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews—it&apos;s about making a real impact. <b>Proceeds from this year&apos;s event will benefit Little Miracles and other local charities</b>. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
+            title={"Little Miracles"} description={<>This beer festival isn&apos;t just about great brews - it&apos;s about making a real impact. <b>Proceeds from this year&apos;s event will benefit Little Miracles and other local charities</b>. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions.</>}
             ctaText={"Little Miracles"}
             link={"https://www.littlemiraclescharity.org.uk/"}
             visualElement={
@@ -164,7 +164,7 @@ export default function Home() {
               Grasmere Farm will also be joining us with their delicious <Link href="https://www.grasmere-farm.co.uk/product/grasmere-grunta-our-signature-snack-salami/"><b>Grasmere Grunta Signature Snack Salami</b></Link>, plus providing a hamper as a prize for our Friday night quiz.
 
               <br /><br />
-              Topped off with fresh, hot donuts from <Link href="https://www.facebook.com/share/18h1MGNbvc/"><b>Shelley Bibby</b></Link>—could it get any better?
+              Topped off with fresh, hot donuts from <Link href="https://www.facebook.com/share/18h1MGNbvc/"><b>Shelley Bibby</b></Link> - could it get any better?
             </>
           }
           ctaText={"Find out more"}

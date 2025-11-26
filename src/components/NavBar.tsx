@@ -28,7 +28,7 @@ export default function NavBar() {
     }, []);
 
     return (
-        <section className="relative z-50">      {/* Existing background div — you can adjust its usage if needed */}
+        <section className="relative z-50">      {/* Existing background div  -  you can adjust its usage if needed */}
             <div
                 className={classNames(
                     "size-full bg-highlight z-50 transition-opacity duration-100",
