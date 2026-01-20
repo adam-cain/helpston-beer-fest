@@ -9,6 +9,7 @@
  * Collections:
  * - sponsors: Individual sponsor entries
  * - sponsorship-packages: Sponsorship tier definitions
+ * - sponsor-leads: Sponsorship enquiries and leads
  * - charities: Charity information
  * - impact-reports: Annual fund allocation reports
  * - gallery-albums: Photo galleries by year
@@ -33,7 +34,7 @@ export default config({
     },
     navigation: {
       'Site Configuration': ['site-settings', 'homepage'],
-      'Sponsors': ['sponsors', 'sponsorship-packages'],
+      'Sponsors': ['sponsors', 'sponsorship-packages', 'sponsor-leads'],
       'Charities & Impact': ['charities', 'impact-reports'],
       'Media': ['gallery-albums'],
     },
@@ -248,6 +249,88 @@ export default config({
           label: 'What\'s Included',
           description: 'List of benefits included in this package',
           formatting: true,
+        }),
+      },
+    }),
+
+    /**
+     * SPONSOR LEADS COLLECTION
+     * Sponsorship enquiries and lead tracking
+     */
+    'sponsor-leads': collection({
+      label: 'Sponsor Leads',
+      path: 'content/leads/*',
+      slugField: 'companyName',
+      format: { data: 'yaml' },
+      schema: {
+        companyName: fields.slug({
+          name: {
+            label: 'Company Name',
+            description: 'The company or organisation name',
+            validation: { isRequired: true },
+          },
+        }),
+        contactName: fields.text({
+          label: 'Contact Name',
+          description: 'Primary contact person',
+          validation: { isRequired: true },
+        }),
+        email: fields.text({
+          label: 'Email',
+          description: 'Contact email address',
+          validation: { isRequired: true },
+        }),
+        phone: fields.text({
+          label: 'Phone',
+          description: 'Contact phone number',
+        }),
+        interestedPackage: fields.select({
+          label: 'Interested Package',
+          description: 'Which sponsorship tier they are interested in',
+          options: [
+            { label: 'Platinum', value: 'platinum' },
+            { label: 'Gold', value: 'gold' },
+            { label: 'Silver', value: 'silver' },
+            { label: 'Bronze', value: 'bronze' },
+            { label: 'General Enquiry', value: 'general' },
+          ],
+          defaultValue: 'general',
+        }),
+        message: fields.text({
+          label: 'Message',
+          description: 'Initial enquiry message',
+          multiline: true,
+        }),
+        referralSource: fields.text({
+          label: 'Referral Source',
+          description: 'How they heard about the festival',
+        }),
+        status: fields.select({
+          label: 'Status',
+          description: 'Current status of this lead',
+          options: [
+            { label: 'New', value: 'new' },
+            { label: 'Contacted', value: 'contacted' },
+            { label: 'Negotiating', value: 'negotiating' },
+            { label: 'Confirmed', value: 'confirmed' },
+            { label: 'Declined', value: 'declined' },
+          ],
+          defaultValue: 'new',
+        }),
+        internalNotes: fields.text({
+          label: 'Internal Notes',
+          description: 'Private notes for organisers (not visible publicly)',
+          multiline: true,
+        }),
+        createdAt: fields.date({
+          label: 'Created Date',
+          description: 'When this lead was received',
+          validation: { isRequired: true },
+        }),
+        isArchived: fields.checkbox({
+          label: 'Archived',
+          description: 'Check to archive this lead',
+          defaultValue: false,
         }),
       },
     }),

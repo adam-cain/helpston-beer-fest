@@ -4,13 +4,15 @@
  * ============================================================================
  * 
  * Handles sponsor enquiry form submissions.
- * Validates input, creates lead record, and optionally sends notification.
+ * Validates input and creates a YAML file in the content/leads directory.
  */
 
 'use server';
 
-import { createLead, type CreateLeadInput } from '@/lib/db/leads';
 import { revalidatePath } from 'next/cache';
+import { writeFile, mkdir } from 'fs/promises';
+import { existsSync } from 'fs';
+import path from 'path';
 
 /**
  * Form validation errors
@@ -87,6 +89,45 @@ function isValidPhone(phone: string): boolean {
 }
 
 /**
+ * Generate a URL-safe slug from a string
+ */
+function generateSlug(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '') // Remove non-word chars
+    .replace(/[\s_-]+/g, '-') // Replace spaces/underscores with hyphens
+    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+}
+
+/**
+ * Generate unique slug by appending number if needed
+ */
+async function getUniqueSlug(baseSlug: string, leadsDir: string): Promise<string> {
+  let slug = baseSlug;
+  let counter = 1;
+  
+  while (existsSync(path.join(leadsDir, `${slug}.yaml`))) {
+    slug = `${baseSlug}-${counter}`;
+    counter++;
+  }
+  
+  return slug;
+}
+
+/**
+ * Escape YAML string values
+ */
+function escapeYamlString(value: string | undefined): string {
+  if (!value) return '""';
+  // If contains special chars, wrap in quotes and escape internal quotes
+  if (value.includes(':') || value.includes('#') || value.includes('\n') || value.includes('"') || value.includes("'")) {
+    return `"${value.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`;
+  }
+  return value;
+}
+
+/**
  * Submit sponsor lead form
  * 
  * @param formData - Form data from the submission
@@ -142,9 +183,7 @@ export async function submitSponsorLead(formData: FormData): Promise<SubmitLeadR
   }
 
   // Check rate limiting
-  // Note: In server actions, we don't have direct access to IP
-  // This is a simplified version - in production use headers or edge middleware
-  const rateLimitKey = email.toLowerCase(); // Use email as rate limit key
+  const rateLimitKey = email.toLowerCase();
   if (isRateLimited(rateLimitKey)) {
     return {
       success: false,
@@ -154,25 +193,42 @@ export async function submitSponsorLead(formData: FormData): Promise<SubmitLeadR
     };
   }
 
-  // Create the lead
+  // Create the lead as a YAML file
   try {
-    const leadData: CreateLeadInput = {
-      company_name: companyName.trim(),
-      contact_name: contactName.trim(),
-      email: email.toLowerCase().trim(),
-      phone: phone?.trim() || undefined,
-      interested_package: packageType,
-      message: message?.trim() || undefined,
-      referral_source: referralSource || undefined,
-    };
+    const leadsDir = path.join(process.cwd(), 'content', 'leads');
+    
+    // Ensure leads directory exists
+    if (!existsSync(leadsDir)) {
+      await mkdir(leadsDir, { recursive: true });
+    }
 
-    await createLead(leadData);
+    // Generate unique slug from company name
+    const baseSlug = generateSlug(companyName);
+    const slug = await getUniqueSlug(baseSlug, leadsDir);
+    
+    // Format today's date as YYYY-MM-DD
+    const today = new Date().toISOString().split('T')[0];
 
-    // Revalidate admin pages to show new lead
-    revalidatePath('/admin/leads');
+    // Build YAML content (slug is the filename, not a field)
+    const yamlContent = `companyName: ${escapeYamlString(companyName.trim())}
+contactName: ${escapeYamlString(contactName.trim())}
+email: ${escapeYamlString(email.toLowerCase().trim())}
+phone: ${escapeYamlString(phone?.trim())}
+interestedPackage: ${packageType}
+message: ${escapeYamlString(message?.trim())}
+referralSource: ${escapeYamlString(referralSource)}
+status: new
+internalNotes: ""
+createdAt: ${today}
+isArchived: false
+`;
 
-    // TODO: Send email notification (implement when email service is configured)
-    // await sendNotificationEmail(leadData);
+    // Write the YAML file
+    const filePath = path.join(leadsDir, `${slug}.yaml`);
+    await writeFile(filePath, yamlContent, 'utf-8');
+
+    // Revalidate pages
+    revalidatePath('/keystatic');
 
     return {
       success: true,
