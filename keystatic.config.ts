@@ -23,10 +23,16 @@
 import { config, collection, singleton, fields } from '@keystatic/core';
 
 export default config({
-  storage: {
-    // Use 'local' for development, 'github' for production with GitHub integration
-    kind: 'local',
-  },
+  storage:
+    process.env.NODE_ENV === 'production'
+      ? {
+          kind: 'github',
+          repo: {
+            owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER!,
+            name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME!,
+          },
+        }
+      : { kind: 'local' },
   
   ui: {
     brand: {
