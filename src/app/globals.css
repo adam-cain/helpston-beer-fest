@@ -156,6 +156,11 @@
   font-style: italic;
 }
 
+/* Hide navbar on Keystatic CMS pages */
+body:has(.keystatic-cms-wrapper) > section:first-of-type {
+  display: none;
+}
+
 @layer utilities {
   /* Display text - large headlines */
   .text-display {
