@@ -1,0 +1,32 @@
+tierName: Bronze Sponsor
+price: 50
+sortOrder: 4
+available: true
+featured: false
+inclusions:
+  - type: unordered-list
+    children:
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Logo on festival website sponsors page
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Name in printed programme
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: 1 complimentary festival ticket

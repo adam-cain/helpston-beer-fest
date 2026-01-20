@@ -1,0 +1,64 @@
+tierName: Platinum Sponsor
+price: 500
+sortOrder: 1
+available: true
+featured: true
+inclusions:
+  - type: unordered-list
+    children:
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Premium logo placement on festival website homepage
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Large banner at festival entrance
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Logo on all printed materials and programmes
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Dedicated social media announcement
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: 8 complimentary festival tickets
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Mention in local press release
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Reserved VIP seating area

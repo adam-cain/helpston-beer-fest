@@ -1,0 +1,40 @@
+tierName: Silver Sponsor
+price: 100
+sortOrder: 3
+available: true
+featured: false
+inclusions:
+  - type: unordered-list
+    children:
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Logo on festival website sponsors page
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Logo on printed programme
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Social media mention
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: 2 complimentary festival tickets

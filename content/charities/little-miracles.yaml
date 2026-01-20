@@ -1,0 +1,56 @@
+name: Little Miracles
+description:
+  - type: paragraph
+    children:
+      - type: text
+        text: "Little Miracles is a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions. Based in Peterborough, they provide vital support services including:"
+  - type: unordered-list
+    children:
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Family support groups and activities
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Sensory play sessions
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Parent and carer wellbeing services
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Holiday clubs and respite activities
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Equipment and resource lending library
+  - type: paragraph
+    children:
+      - type: text
+        text: "The Helpston Beer Festival is proud to support Little Miracles as our primary beneficiary. Your attendance and support helps make a real difference to local families."
+logo: /other/charity.png
+website: 'https://www.littlemiraclescharity.org.uk/'
+yearFeatured: 2025
+isPrimary: true

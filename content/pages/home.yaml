@@ -1,0 +1,34 @@
+heroTitle: HELPSTON BEER FESTIVAL
+charitySection:
+  subtitle: Charity
+  title: Little Miracles
+  description: "This beer festival isn't just about great brews - it's about making a real impact. Proceeds from this year's event will benefit Little Miracles and other local charities. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions."
+  ctaText: Little Miracles
+  ctaLink: 'https://www.littlemiraclescharity.org.uk/'
+  image: /other/charity.png
+locationSection:
+  subtitle: Where
+  title: Helpston Village Hall
+  description: "The Beer Festival is hosted at Helpston Village Hall, centrally located in the village of Helpston near Peterborough. The venue is easy to access, with a local bus route passing directly through the village, ensuring convenient transport options for attendees. There is limited on street parking for those driving to the event."
+  ctaText: Find Out Where
+  ctaLink: 'https://maps.app.goo.gl/VynhgiMLfBig4Eyn8'
+foodSection:
+  subtitle: Food and Drink
+  title: Pizza & Beer
+  description: "Enjoy ales and beers from 7 local breweries, perfectly paired with fresh, authentic, wood-fired pizza from Amo La Pizza's iconic pizza van. Grasmere Farm will also be joining us with their delicious Grasmere Grunta Signature Snack Salami, plus providing a hamper as a prize for our Friday night quiz. Topped off with fresh, hot donuts from Shelley Bibby - could it get any better?"
+  ctaText: Find out more
+  ctaLink: /food-and-drink
+  image: /images/food/pizza-van.jpg
+musicSection:
+  subtitle: Live Music
+  title: The Zephyrs
+  description: "Join us for an unforgettable evening with The Zephyrs, a local band from the Peterborough area, known for their energetic performances and captivating mix of classic rock and popular hits. Don't miss their live set starting at 7:30 pm this Saturday!"
+  ctaText: Discover The Band
+  ctaLink: 'https://www.facebook.com/p/The-Zephyrs-100077795577286/'
+  image: /other/zephyrs.jpg
+sponsorsSection:
+  subtitle: Sponsors
+  title: Thank You
+  description: "We couldn't raise a glass or bring this incredible charity beer festival to life without the amazing support of our sponsors. Their generosity helps us create a memorable experience for our community while raising funds for important causes. From providing the finest craft brews to supporting our event logistics, our sponsors make it all happen. Interested in becoming a sponsor? Get in touch with us for more information. Together, we can make a lasting impact. Cheers to that!"
+  ctaText: Meet Our Generous Sponsors
+  ctaLink: /sponsors
