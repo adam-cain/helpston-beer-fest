@@ -13,15 +13,9 @@ export default function FlyerPopup({ popupId, onClose }: FlyerPopupProps) {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
-    // Check if this popup has been closed before
-    // const hasBeenClosed = false;
-    const hasBeenClosed = localStorage.getItem(`popup_closed_${popupId}`);
-    
-    if (!hasBeenClosed) {
-      // Only show the popup if it hasn't been closed before
-      setIsVisible(true);
-      document.body.style.overflow = 'hidden';
-    }
+    // Show the popup on every site visit
+    setIsVisible(true);
+    document.body.style.overflow = 'hidden';
     
     return () => {
       document.body.style.overflow = 'auto';
@@ -31,9 +25,6 @@ export default function FlyerPopup({ popupId, onClose }: FlyerPopupProps) {
   const closePopup = () => {
     setIsVisible(false);
     document.body.style.overflow = 'auto';
-    
-    // Mark this popup as closed in localStorage
-    localStorage.setItem(`popup_closed_${popupId}`, 'true');
     
     // Call optional onClose callback if provided
     if (onClose) {
