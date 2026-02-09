@@ -1,0 +1,52 @@
+name: Peterborough Soup Kitchen
+description:
+  - type: paragraph
+    children:
+      - type: text
+        text: "Peterborough Soup Kitchen is a local charity for homeless and disadvantaged people from in and around the city. Founded in 1983, they have been feeding those in need for over 40 years."
+  - type: paragraph
+    children:
+      - type: text
+        text: "Their dedicated teams of volunteers prepare soup, hot and cold drinks, sandwiches and take-away food, which are then delivered via a specially adapted serving van to Acland Street car park in the centre of Peterborough. Key facts:"
+  - type: unordered-list
+    children:
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Open 52 weeks per year, 7 days a week
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Serving 35 to 60 clients each day
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: Run entirely by committed volunteers with no paid staff
+      - type: list-item
+        children:
+          - type: list-item-content
+            children:
+              - type: paragraph
+                children:
+                  - type: text
+                    text: 100% of donations go directly to feeding the homeless and disadvantaged
+  - type: paragraph
+    children:
+      - type: text
+        text: "The Helpston Beer Festival is proud to support Peterborough Soup Kitchen and the vital work they do for our local community."
+logo: /images/charities/peterborough-soup-kitchen.png
+website: 'https://www.peterboroughsoupkitchen.org.uk/'
+yearFeatured: 2025
+isPrimary: false

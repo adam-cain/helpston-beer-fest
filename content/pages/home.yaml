@@ -1,10 +1,10 @@
 heroTitle: HELPSTON BEER FESTIVAL
 charitySection:
   subtitle: Charity
-  title: Little Miracles
-  description: "This beer festival isn't just about great brews - it's about making a real impact. Proceeds from this year's event will benefit Little Miracles and other local charities. Little Miracles are a charity dedicated to helping families with children who have additional needs, disabilities, or life-limiting conditions."
-  ctaText: Little Miracles
-  ctaLink: 'https://www.littlemiraclescharity.org.uk/'
+  title: Who its all for
+  description: "This beer festival isn't just about great brews - it's about making a real impact. Proceeds from this year's event will benefit Little Miracles and Peterborough Soup Kitchen."
+  ctaText: Our Charities
+  ctaLink: /charities
   image: /other/charity.png
 locationSection:
   subtitle: Where
