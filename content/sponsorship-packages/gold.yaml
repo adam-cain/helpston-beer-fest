@@ -2,47 +2,4 @@ tierName: Gold Sponsor
 price: 25
 sortOrder: 2
 available: true
-featured: false
-inclusions:
-  - type: unordered-list
-    children:
-      - type: list-item
-        children:
-          - type: list-item-content
-            children:
-              - type: paragraph
-                children:
-                  - type: text
-                    text: Logo on festival website sponsors page
-      - type: list-item
-        children:
-          - type: list-item-content
-            children:
-              - type: paragraph
-                children:
-                  - type: text
-                    text: Logo on printed materials
-      - type: list-item
-        children:
-          - type: list-item-content
-            children:
-              - type: paragraph
-                children:
-                  - type: text
-                    text: Social media recognition
-      - type: list-item
-        children:
-          - type: list-item-content
-            children:
-              - type: paragraph
-                children:
-                  - type: text
-                    text: 4 complimentary festival tickets
-      - type: list-item
-        children:
-          - type: list-item-content
-            children:
-              - type: paragraph
-                children:
-                  - type: text
-                    text: Mention in press release
+featured: true
