@@ -3,7 +3,8 @@
  * GALLERY GRID COMPONENT
  * ============================================================================
  * 
- * Displays a grid of images with optional lightbox functionality.
+ * Displays a grid of images with lightbox functionality.
+ * Styled with sharp corners to match the editorial design system.
  */
 
 'use client';
@@ -23,30 +24,39 @@ type GalleryGridProps = {
   albumTitle?: string;
 };
 
+/**
+ * GalleryGrid — renders a masonry-style photo grid with lightbox
+ * Inputs: images (array of gallery image objects), albumTitle (string for alt text)
+ * Outputs: Interactive grid with click-to-open lightbox, keyboard navigation
+ */
 export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  /** Opens the lightbox at a given index and locks body scroll */
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     document.body.style.overflow = 'hidden';
   };
 
+  /** Closes the lightbox and restores body scroll */
   const closeLightbox = () => {
     setLightboxIndex(null);
     document.body.style.overflow = 'unset';
   };
 
+  /** Navigate to previous image, wrapping at the start */
   const goToPrevious = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex(lightboxIndex === 0 ? images.length - 1 : lightboxIndex - 1);
   };
 
+  /** Navigate to next image, wrapping at the end */
   const goToNext = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex(lightboxIndex === images.length - 1 ? 0 : lightboxIndex + 1);
   };
 
-  // Handle keyboard navigation
+  /** Handle keyboard navigation within the lightbox */
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') goToPrevious();
@@ -61,7 +71,7 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
           <button
             key={index}
             onClick={() => openLightbox(index)}
-            className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer focus:outline-none focus:ring-2 focus:ring-highlight"
+            className="relative aspect-square overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-highlight"
           >
             <Image
               src={img.image}
@@ -94,7 +104,7 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
           {/* Close button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 p-2 text-white/70 hover:text-white transition-colors z-10"
+            className="absolute top-4 right-4 p-2 text-white/40 hover:text-white transition-colors z-10"
             aria-label="Close lightbox"
           >
             <X size={32} />
@@ -103,7 +113,7 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
           {/* Previous button */}
           <button
             onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white transition-colors z-10"
             aria-label="Previous image"
           >
             <ChevronLeft size={48} />
@@ -112,7 +122,7 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
           {/* Next button */}
           <button
             onClick={(e) => { e.stopPropagation(); goToNext(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white/70 hover:text-white transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-white/40 hover:text-white transition-colors z-10"
             aria-label="Next image"
           >
             <ChevronRight size={48} />
@@ -135,12 +145,12 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
 
           {/* Caption */}
           {(images[lightboxIndex].caption || images[lightboxIndex].photographer) && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center px-6 py-3 bg-black/60 rounded-lg max-w-lg">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center px-6 py-3 bg-black/60 max-w-lg">
               {images[lightboxIndex].caption && (
-                <p className="text-white">{images[lightboxIndex].caption}</p>
+                <p className="text-white text-body">{images[lightboxIndex].caption}</p>
               )}
               {images[lightboxIndex].photographer && (
-                <p className="text-gray-400 text-sm mt-1">
+                <p className="text-white/40 text-meta mt-1">
                   Photo by {images[lightboxIndex].photographer}
                 </p>
               )}
@@ -148,7 +158,7 @@ export default function GalleryGrid({ images, albumTitle }: GalleryGridProps) {
           )}
 
           {/* Counter */}
-          <div className="absolute top-4 left-4 text-white/70 text-sm">
+          <div className="absolute top-4 left-4 text-white/40 text-meta">
             {lightboxIndex + 1} / {images.length}
           </div>
         </div>

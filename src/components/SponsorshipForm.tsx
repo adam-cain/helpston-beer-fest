@@ -5,6 +5,10 @@
  * 
  * Lead capture form for prospective sponsors.
  * Handles validation, submission, and feedback.
+ * Styled with sharp corners and the editorial design system.
+ * 
+ * Note: This form is rendered inside a white-background section,
+ * so inputs use dark-on-light styling to match.
  */
 
 'use client';
@@ -19,6 +23,11 @@ type SponsorshipFormProps = {
   contactEmail: string;
 };
 
+/**
+ * SponsorshipForm — renders the enquiry form for prospective sponsors
+ * Inputs: packages (array of package options), selectedPackage (default slug), contactEmail
+ * Outputs: Form with validation, submission feedback, and success state
+ */
 export default function SponsorshipForm({ 
   packages, 
   selectedPackage = '',
@@ -47,11 +56,11 @@ export default function SponsorshipForm({
   // Show success message after submission
   if (submitted) {
     return (
-      <div className="bg-green-900/20 border border-green-700 rounded-lg p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-white mb-2">Enquiry Submitted!</h3>
-        <p className="text-gray-300 mb-4">{successMessage}</p>
-        <p className="text-gray-400 text-sm">
+      <div className="border-2 border-highlight p-8 text-center">
+        <CheckCircle className="w-16 h-16 text-highlight mx-auto mb-4" />
+        <h3 className="text-2xl text-title mb-2">Enquiry Submitted!</h3>
+        <p className="text-body text-black/60 mb-4">{successMessage}</p>
+        <p className="text-meta text-black/40">
           You can also reach us directly at{' '}
           <a href={`mailto:${contactEmail}`} className="text-highlight hover:underline">
             {contactEmail}
@@ -61,20 +70,25 @@ export default function SponsorshipForm({
     );
   }
 
+  /* Shared input classes — sharp corners, light bg, dark border */
+  const inputBase = "w-full px-4 py-3 bg-black/5 border text-black placeholder-black/30 focus:outline-none focus:ring-2 focus:ring-highlight";
+  const inputValid = "border-black/20";
+  const inputError = "border-red-500";
+
   return (
     <form action={handleSubmit} className="space-y-6">
       {/* General error message */}
       {errors.general && (
-        <div className="bg-red-900/20 border border-red-700 rounded-lg p-4 flex items-start gap-3">
+        <div className="border-2 border-red-500 p-4 flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
-          <p className="text-red-300">{errors.general}</p>
+          <p className="text-red-600 text-body">{errors.general}</p>
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Company Name */}
         <div>
-          <label htmlFor="companyName" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="companyName" className="text-label block mb-2 text-black/60">
             Company Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -84,21 +98,17 @@ export default function SponsorshipForm({
             required
             minLength={2}
             maxLength={255}
-            className={`
-              w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-              placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight
-              ${errors.companyName ? 'border-red-500' : 'border-gray-700'}
-            `}
+            className={`${inputBase} ${errors.companyName ? inputError : inputValid}`}
             placeholder="Your company name"
           />
           {errors.companyName && (
-            <p className="mt-1 text-sm text-red-400">{errors.companyName}</p>
+            <p className="mt-1 text-sm text-red-500">{errors.companyName}</p>
           )}
         </div>
 
         {/* Contact Name */}
         <div>
-          <label htmlFor="contactName" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="contactName" className="text-label block mb-2 text-black/60">
             Contact Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -108,21 +118,17 @@ export default function SponsorshipForm({
             required
             minLength={2}
             maxLength={255}
-            className={`
-              w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-              placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight
-              ${errors.contactName ? 'border-red-500' : 'border-gray-700'}
-            `}
+            className={`${inputBase} ${errors.contactName ? inputError : inputValid}`}
             placeholder="Your name"
           />
           {errors.contactName && (
-            <p className="mt-1 text-sm text-red-400">{errors.contactName}</p>
+            <p className="mt-1 text-sm text-red-500">{errors.contactName}</p>
           )}
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="email" className="text-label block mb-2 text-black/60">
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -130,43 +136,35 @@ export default function SponsorshipForm({
             id="email"
             name="email"
             required
-            className={`
-              w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-              placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight
-              ${errors.email ? 'border-red-500' : 'border-gray-700'}
-            `}
+            className={`${inputBase} ${errors.email ? inputError : inputValid}`}
             placeholder="you@company.com"
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+            <p className="mt-1 text-sm text-red-500">{errors.email}</p>
           )}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+          <label htmlFor="phone" className="text-label block mb-2 text-black/60">
             Phone Number
           </label>
           <input
             type="tel"
             id="phone"
             name="phone"
-            className={`
-              w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-              placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight
-              ${errors.phone ? 'border-red-500' : 'border-gray-700'}
-            `}
+            className={`${inputBase} ${errors.phone ? inputError : inputValid}`}
             placeholder="07xxx xxxxxx"
           />
           {errors.phone && (
-            <p className="mt-1 text-sm text-red-400">{errors.phone}</p>
+            <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
           )}
         </div>
       </div>
 
       {/* Package Selection */}
       <div>
-        <label htmlFor="package" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="package" className="text-label block mb-2 text-black/60">
           Interested Package <span className="text-red-500">*</span>
         </label>
         <select
@@ -174,11 +172,7 @@ export default function SponsorshipForm({
           name="package"
           required
           defaultValue={selectedPackage}
-          className={`
-            w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-            focus:outline-none focus:ring-2 focus:ring-highlight
-            ${errors.package ? 'border-red-500' : 'border-gray-700'}
-          `}
+          className={`${inputBase} ${errors.package ? inputError : inputValid}`}
         >
           <option value="">Select a package...</option>
           {packages.map((pkg) => (
@@ -192,13 +186,13 @@ export default function SponsorshipForm({
           ))}
         </select>
         {errors.package && (
-          <p className="mt-1 text-sm text-red-400">{errors.package}</p>
+          <p className="mt-1 text-sm text-red-500">{errors.package}</p>
         )}
       </div>
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="message" className="text-label block mb-2 text-black/60">
           Message
         </label>
         <textarea
@@ -206,27 +200,23 @@ export default function SponsorshipForm({
           name="message"
           rows={4}
           maxLength={1000}
-          className={`
-            w-full px-4 py-3 bg-gray-900 border rounded-lg text-white
-            placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight
-            ${errors.message ? 'border-red-500' : 'border-gray-700'}
-          `}
+          className={`${inputBase} ${errors.message ? inputError : inputValid}`}
           placeholder="Tell us about your company and any specific requirements..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+          <p className="mt-1 text-sm text-red-500">{errors.message}</p>
         )}
       </div>
 
       {/* Referral Source */}
       <div>
-        <label htmlFor="referralSource" className="block text-sm font-medium text-gray-300 mb-2">
+        <label htmlFor="referralSource" className="text-label block mb-2 text-black/60">
           How did you hear about us?
         </label>
         <select
           id="referralSource"
           name="referralSource"
-          className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-highlight"
+          className={`${inputBase} ${inputValid}`}
         >
           <option value="">Select an option...</option>
           <option value="previous-sponsor">Previous Sponsor</option>
@@ -245,9 +235,9 @@ export default function SponsorshipForm({
           id="consent"
           name="consent"
           required
-          className="mt-1 w-5 h-5 rounded border-gray-700 bg-gray-900 text-highlight focus:ring-highlight focus:ring-2"
+          className="mt-1 w-5 h-5 border-black/20 bg-black/5 text-highlight focus:ring-highlight focus:ring-2"
         />
-        <label htmlFor="consent" className="text-sm text-gray-300">
+        <label htmlFor="consent" className="text-sm text-body text-black/60">
           I agree to be contacted about sponsorship opportunities for the Helpston Beer Festival. 
           Your information will only be used for this purpose and will not be shared with third parties.
           <span className="text-red-500"> *</span>
@@ -259,11 +249,11 @@ export default function SponsorshipForm({
         type="submit"
         disabled={isPending}
         className={`
-          w-full py-4 px-6 rounded-lg font-semibold text-lg transition-colors
+          w-full py-4 px-6 text-cta text-lg transition-colors
           flex items-center justify-center gap-2
           ${isPending 
-            ? 'bg-gray-700 text-gray-400 cursor-not-allowed' 
-            : 'bg-highlight text-black hover:bg-highlight/90'
+            ? 'bg-black/20 text-black/40 cursor-not-allowed' 
+            : 'bg-black text-white hover:bg-black/80'
           }
         `}
       >
@@ -277,7 +267,7 @@ export default function SponsorshipForm({
         )}
       </button>
 
-      <p className="text-center text-sm text-gray-500">
+      <p className="text-center text-meta text-black/40">
         Prefer to talk directly? Email us at{' '}
         <a href={`mailto:${contactEmail}`} className="text-highlight hover:underline">
           {contactEmail}

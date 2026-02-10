@@ -4,6 +4,8 @@
  * ============================================================================
  * 
  * Displays a sponsorship package tier with pricing and inclusions.
+ * Styled with sharp corners and custom typography to match the 
+ * homepage editorial design system.
  */
 
 'use client';
@@ -13,6 +15,8 @@ import { Star, Check } from 'lucide-react';
 
 /**
  * Helper to render inclusions from the YAML structure
+ * Inputs: inclusions (unknown) — raw YAML document content for package inclusions
+ * Outputs: JSX list items with check icons
  */
 function InclusionsList({ inclusions }: { inclusions: unknown }) {
   if (!inclusions) return null;
@@ -27,7 +31,7 @@ function InclusionsList({ inclusions }: { inclusions: unknown }) {
               // Extract text from nested structure
               const text = listItem.children?.[0]?.children?.[0]?.children?.[0]?.text || '';
               return text ? (
-                <li key={`${idx}-${listIdx}`} className="flex items-start gap-2 text-gray-300">
+                <li key={`${idx}-${listIdx}`} className="flex items-start gap-2 text-white/60">
                   <Check size={18} className="text-highlight shrink-0 mt-0.5" />
                   <span>{text}</span>
                 </li>
@@ -49,6 +53,11 @@ type PackageCardProps = {
   isSelected?: boolean;
 };
 
+/**
+ * PackageCard — renders a single sponsorship tier
+ * Inputs: package (SponsorshipPackage), onSelect callback, isSelected flag
+ * Outputs: Interactive card with tier details, pricing, and inclusions
+ */
 export default function PackageCard({ 
   package: pkg, 
   onSelect,
@@ -63,16 +72,16 @@ export default function PackageCard({
   return (
     <div 
       className={`
-        relative flex flex-col rounded-lg border-2 transition-all duration-300
+        relative flex flex-col border-2 transition-all duration-300
         ${pkg.featured 
-          ? 'border-highlight bg-highlight/5 shadow-xl scale-105' 
-          : 'border-gray-700 bg-gray-900/50 hover:border-gray-500'
+          ? 'border-highlight bg-highlight/10 scale-105' 
+          : 'border-white/20 bg-white/5 hover:border-white/40'
         }
         ${isSelected 
           ? 'ring-2 ring-highlight ring-offset-2 ring-offset-black' 
           : ''
         }
-        ${onSelect ? 'cursor-pointer hover:shadow-lg' : ''}
+        ${onSelect ? 'cursor-pointer' : ''}
       `}
       onClick={handleClick}
       role={onSelect ? 'button' : undefined}
@@ -87,7 +96,7 @@ export default function PackageCard({
       {/* Featured Badge */}
       {pkg.featured && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center gap-1 px-3 py-1 bg-highlight text-black text-sm font-semibold rounded-full">
+          <span className="inline-flex items-center gap-1 px-3 py-1 bg-highlight text-black text-sm text-cta normal-case">
             <Star size={14} className="fill-current" />
             Popular
           </span>
@@ -96,25 +105,25 @@ export default function PackageCard({
 
       {/* Header */}
       <div className={`p-6 text-center ${pkg.featured ? 'pt-8' : ''}`}>
-        <h3 className="text-2xl font-bold text-white mb-2">
+        <h3 className="text-2xl text-title mb-2">
           {pkg.tierName}
         </h3>
-        <div className="text-4xl font-bold text-highlight">
+        <div className="text-4xl text-display text-highlight">
           £{pkg.price.toLocaleString()}
         </div>
         {!pkg.available && (
-          <span className="inline-block mt-2 px-2 py-1 bg-red-900/50 text-red-300 text-sm rounded">
+          <span className="inline-block mt-2 px-2 py-1 bg-red-900/50 text-red-300 text-sm">
             Sold Out
           </span>
         )}
       </div>
 
       {/* Divider */}
-      <div className="border-t border-gray-700 mx-6" />
+      <div className="border-t border-white/10 mx-6" />
 
       {/* Inclusions */}
       <div className="p-6 flex-grow">
-        <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">
+        <h4 className="text-label mb-4">
           What&apos;s Included
         </h4>
         <ul className="space-y-2">
@@ -126,10 +135,10 @@ export default function PackageCard({
       {onSelect && (
         <div className="p-4 pt-0">
           <div className={`
-            w-full py-3 rounded-lg text-center font-semibold transition-colors
+            w-full py-3 text-center text-cta transition-colors
             ${isSelected 
               ? 'bg-highlight text-black' 
-              : 'bg-gray-800 text-white hover:bg-gray-700'
+              : 'bg-white/10 text-white hover:bg-white/20'
             }
             ${!pkg.available ? 'opacity-50 cursor-not-allowed' : ''}
           `}>
