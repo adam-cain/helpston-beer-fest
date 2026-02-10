@@ -115,7 +115,7 @@ export default async function Sponsors() {
 
       {/* Become a Sponsor — dark section */}
       <div className="container mx-auto px-4 py-12 lg:px-32 xl:px-48">
-        <div className="grid gap-10 items-start grid-cols-1 sm:grid-cols-2">
+        <div className="grid gap-10 items-start">
           <div className="flex flex-col gap-5">
             <p className="text-label">Get Involved</p>
             <h3 className="text-4xl lg:text-5xl text-title text-balance">Become a Sponsor</h3>
