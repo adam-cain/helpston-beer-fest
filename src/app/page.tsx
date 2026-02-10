@@ -18,13 +18,14 @@ import Map from "@/components/Maps";
 import Link from "next/link";
 import FlyerPopup from "@/components/FlyerPopup";
 import HomeHero from "@/components/HomeHero";
-import { getSiteSettings, getHomepageContent, formatEventDate } from "@/lib/content/reader";
+import { getSiteSettings, getHomepageContent, getCharities, formatEventDate } from "@/lib/content/reader";
 
 export default async function Home() {
   // Fetch content from CMS
-  const [settings, content] = await Promise.all([
+  const [settings, content, charities] = await Promise.all([
     getSiteSettings(),
     getHomepageContent(),
+    getCharities(),
   ]);
 
   // Format the event date
@@ -58,14 +59,20 @@ export default async function Home() {
             ctaText={content.charitySection.ctaText || "Learn More"}
             link={content.charitySection.ctaLink || "#"}
             visualElement={
-              content.charitySection.image && (
-                <div className="flex max-h-fit items-center justify-center align-middle object-center place-content-center">
-                  <Image
-                    alt="Charity logo"
-                    src={content.charitySection.image}
-                    width={300}
-                    height={192}
-                  />
+              charities.length > 0 && (
+                <div className="flex flex-row sm:flex-col gap-4 items-center justify-center w-full max-w-full overflow-hidden">
+                  {charities
+                    .filter((c) => c.logo)
+                    .map((charity) => (
+                      <Image
+                        key={charity.slug}
+                        alt={`${charity.name} logo`}
+                        src={charity.logo!}
+                        width={300}
+                        height={192}
+                        className="max-w-[45%] sm:max-h-[160px] md:max-h-[200px] lg:max-h-[240px] xl:max-h-[140px] sm:max-w-full h-auto object-contain p-2"
+                      />
+                    ))}
                 </div>
               )
             }
