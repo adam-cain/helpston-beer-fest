@@ -46,26 +46,26 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-          <Beer size={48} className="mx-auto text-highlight mb-4" />
-          <h1 className="text-2xl font-bold text-white mb-2">CMS Login</h1>
-          <p className="text-gray-400">
+        <div className="text-center mb-12">
+          <Beer size={56} className="mx-auto text-highlight mb-6" />
+          <h1 className="text-4xl text-title mb-3">CMS Login</h1>
+          <p className="text-label text-gray-400">
             Enter the password to access the content management system
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+        <form onSubmit={handleSubmit} className="border border-white/10 p-8">
           {error && (
-            <div className="mb-4 p-3 bg-red-900/20 border border-red-700 rounded-lg flex items-center gap-2 text-red-400">
+            <div className="mb-4 p-3 bg-red-900/20 border border-red-700 flex items-center gap-2 text-red-400">
               <AlertCircle size={18} />
               {error}
             </div>
           )}
 
           <div className="mb-6">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+            <label htmlFor="password" className="block text-label text-gray-400 mb-2">
               Password
             </label>
             <input
@@ -75,7 +75,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoFocus
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight"
+              className="w-full px-4 py-3 bg-transparent border-b border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-highlight transition-colors"
               placeholder="Enter password"
             />
           </div>
@@ -84,10 +84,10 @@ export default function LoginPage() {
             type="submit"
             disabled={isLoading || !password}
             className={`
-              w-full py-3 px-4 rounded-lg font-semibold transition-colors
-              flex items-center justify-center gap-2
+              w-full py-3 px-4 font-semibold transition-colors
+              flex items-center justify-center gap-2 text-cta
               ${isLoading || !password
-                ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                ? 'bg-white/10 text-gray-500 cursor-not-allowed'
                 : 'bg-highlight text-black hover:bg-highlight/90'
               }
             `}
